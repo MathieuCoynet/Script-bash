@@ -1,23 +1,5 @@
 #!/bin/sh
 
-#!/bin/sh
-echo -n "Voulez-vous créer l'arboréssance Y/N : "
-read ouinon
-if [ "$ouinon" = "y" ] || [ "$ouinon" = "Y" ]; then
-    
-
-    mkdir p- Yo/{script,img,css}
-    touch Yo/script/script.js
-    touch Yo/css/style.css
-    touch Yo/index.html
-
-elif [ "$ouinon" = "n" ] || [ "$ouinon" = "N" ]; then
-    echo "Ok, bye! "
-
-USER=SSH_USERNAME
-HOST=SSH_HOST
-GIT_PATH=SSH_GIT_PATH
-
 REPO=${PWD##*/}
 GIT_REMOTE_URL=ssh://$USER@$HOST/$GIT_PATH/$REPO
 ~cd

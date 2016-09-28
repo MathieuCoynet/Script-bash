@@ -6,13 +6,26 @@ GIT_REMOTE_URL=ssh://$USER@$HOST/$GIT_PATH/$REPO
 read reponse
 echo "==========Bienvenue=Dans=La=Matrice============"
 echo "----------Que cherche-tu l'ami?----------------"
+echo "-----[0]Configurer GIT...----------------------"
 echo "-----[1]Creer repertoire GITHUB----------------"
 echo "-----[2]Push...================================"
 echo "-----[3]Clone/---------------------------------"
 echo "=====[4]Creer=repertoire=entier================"
 echo "==========QUELLE=PILLULE=AVALERA-TU?==========="
 
-if ("$reponse" = "1"); then 
+if ("$reponse" = "0"); then
+echo "------Veuillez entrer votre adresse email:----"
+read email
+git config --global user.email "$email"
+echo "======Veuillez entrer votre nom d'utilisateur:"
+read username
+git config --global user.name "$username"
+echo "----------Veuillez entrer votre identifiant Git:"
+read login
+curl -u $login https://api.github.com/user/repos -d" {\"name\":\"$repo_name\"}"
+ 
+
+elif ("$reponse" = "1"); then 
 
 echo "============================================="
 echo "-------------------------------------------"
@@ -21,6 +34,7 @@ echo "-------------------------------------------"
 
 # Ici on nous rappel l'endroit où nous somme
 echo "Nous sommes:"
+
 pwd
 echo "-------------------"
 echo "============Envoyer=repo=à:============"
@@ -169,3 +183,6 @@ echo "------iIERROR!--!--------------------"
 echo "----Error-----------------------Error----"
 echo "-------------Error----------Error---------"
 echo "--------------------Error--------------"
+exit $?
+fi
+firefox https://github.com/MathieuCoynet/${repMao_name}

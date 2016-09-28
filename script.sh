@@ -1,5 +1,18 @@
 #!/bin/sh
 
+#!/bin/sh
+echo -n "Voulez-vous créer l'arboréssance Y/N : "
+read ouinon
+if [ "$ouinon" = "y" ] || [ "$ouinon" = "Y" ]; then
+    
+
+    mkdir p- Yo/{script,img,css}
+    touch Yo/script/script.js
+    touch Yo/css/style.css
+    touch Yo/index.html
+
+elif [ "$ouinon" = "n" ] || [ "$ouinon" = "N" ]; then
+    echo "Ok, bye! "
 
 USER=SSH_USERNAME
 HOST=SSH_HOST
@@ -14,6 +27,7 @@ echo "----------Que cherche-tu l'ami?----------------"
 echo "-----[1]Creer repertoire GITHUB----------------"
 echo "-----[2]Push...================================"
 echo "-----[3]Clone/---------------------------------"
+echo "=====[4]Creer=repertoire=entier================"
 echo "==========QUELLE=PILLULE=AVALERA-TU?==========="
 
 if ("$reponse" = "1"); then 
@@ -40,6 +54,7 @@ echo "------------------"
 # On commence le protocol de mise en ligne
 
 touch .gitignore
+echo "# Nouveau site" >> README.md
 git init
 git add .
 
@@ -117,6 +132,48 @@ echo "======L'evolution=à=été=cloner=avec=succés==="
 echo "------------------------------------"
 echo "-----------------------------"
 echo "-----------------------------"
+
+#On vient creer un structure entière
+elif ["$reponse" = "4" ]; then
+				echo -n "Voulez-vous créer l'arboréssance (Oui/non?) : "
+			read ouinon
+			if [ "$ouinon" = "Oui" ] || [ "$ouinon" = "y" ]; then
+			    
+
+			    echo n- "Quel noms de projet? "
+			    read noms
+	
+			    mkdir p- $noms/{script,img,css}
+			    touch $noms/script/script.js
+			    touch $noms/css/style.css
+			    touch $noms/index.html
+
+															    echo '<!doctype html>
+												<html lang="fr">
+												<head>
+												  <meta charset="utf-8">
+												  <title>Titre de la page</title>
+												  <link rel="stylesheet" href="style.css">
+												  <script src="script.js"></script>
+												</head>
+												<body>
+												  ...
+												  <!-- Le reste du contenu -->
+												  ...
+												</body>
+												</html>' > index.html
+
+			    echo "---------------------------------------------"
+			    echo "----------Creation réussite!-----------------"
+			    echo "==============================================="
+
+			elif [ "$ouinon" = "Non" ] || [ "$ouinon" = "n" ]; then
+			    echo "----Pourquoi vient-tu alors?---------------"
+			    echo "================================================"
+			    echo "================================================"
+
+
+
 
 else 
 echo "-----------------------------"

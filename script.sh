@@ -71,7 +71,7 @@ echo "---------------"
 read url
 git push--all $url 
 git remote add origin $url
-git push u- origin master
+git push -u origin master
 
 echo "----------------------------"
 echo "====OP=bro!========="
@@ -98,8 +98,8 @@ echo "--------------------------------"
 echo "======Objet du changement?========"
 echo "--------------------------------"
 echo "-----------------------------"
-read commantaire
-git commit m- "$commentaire"
+read commentaire
+git commit -m "$commentaire"
 
 
 git push
@@ -139,10 +139,10 @@ elif ["$reponse" = "4" ]; then
 			if [ "$ouinon" = "Oui" ] || [ "$ouinon" = "y" ]; then
 			    
 
-			    echo n- "Quel noms de projet? "
+			    echo -n "Quel noms de projet? "
 			    read noms
 	
-			    mkdir p- $noms/{script,img,css}
+			    mkdir -p $noms/{script,img,css}
 			    touch $noms/script/script.js
 			    touch $noms/css/style.css
 			    touch $noms/index.html

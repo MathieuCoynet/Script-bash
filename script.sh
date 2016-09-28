@@ -9,8 +9,11 @@ echo "----------Que cherche-tu l'ami?----------------"
 echo "-----[0]Configurer GIT...----------------------"
 echo "-----[1]Creer repertoire GITHUB----------------"
 echo "-----[2]Push...================================"
-echo "-----[3]Clone/---------------------------------"
+echo "-----[3]Cloner---------------------------------"
 echo "=====[4]Creer=repertoire=entier================"
+echo "-----[5]Creer Branche--------------------------"
+echo "-----[6]Changer de branche---------------------"
+echo "-----[7]Suprimer une branche-------------------"
 echo "==========QUELLE=PILLULE=AVALERA-TU?==========="
 
 if ("$reponse" = "0"); then
